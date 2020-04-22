@@ -474,15 +474,16 @@ public class Logicadenegocios {
         ResultSet rs = dat.mostrarPermisosUs(con);
         return rs;
     }
+    
     // mostrar permiso de acuerdo a un parametro
-     public ResultSet mostrarPermiso() {
-        ResultSet rs = dat.mostrarPermiso(con);
+     public ResultSet mostrarPermiso(int idPerm) {
+        ResultSet rs = dat.mostrarPermiso(con, idPerm);
         return rs;
     }
     
     // mostrar permiso de acuerdo a un parametro
-     public ResultSet mostrarPermisos(int idPerm) {
-        ResultSet rs = dat.mostrarPermisos(con, idPerm);
+     public ResultSet mostrarPermisos() {
+        ResultSet rs = dat.mostrarPermisos(con);
         return rs;
     }
 
@@ -515,8 +516,8 @@ public class Logicadenegocios {
     }
 
     // Insertar permisos a usuarios en la BD
-    public int insertarPermisoUs(int idUs, int idPerm, int act) {
-        int cantRegs = dat.insertarPermisoUsuario(con, idUs, idPerm,act);
+    public int insertarPermisoUs(int idUs, int idPerm) {
+        int cantRegs = dat.insertarPermisoUsuario(con, idUs, idPerm);
         System.out.println(cantRegs + " Insertados");
         return cantRegs;
     }

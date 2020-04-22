@@ -27,15 +27,22 @@
         <div >
 
             <%
-                int idPerm = Integer.parseInt(request.getParameter("idPerm"));
-                ResultSet rs = null;
+                //int idPerm = Integer.parseInt(request.getParameter("idPerm"));
+                String idPerm =request.getParameter("idPerm");
                 Logicadenegocios ln = new Logicadenegocios();
-                try {
-                    rs = ln.mostrarPermiso(idPerm);
-                    while (rs.next()) {
+                
+                if(idPerm !=null)
+                {
+                    int idPer = Integer.parseInt(idPerm);
+                    ResultSet rs = null;
+                    
+                     try {
+                         
+                            rs = ln.mostrarPermiso(idPer);
+                            while (rs.next()) {
             %>
 
-            <form action="">
+            <form action="" method="GET">
                 <table border="1" width="250" align="center">
                     <thead>           
                         <tr>
@@ -64,6 +71,7 @@
             } catch (Exception e) {
                 out.println(e);
             }
+}
             if (request.getParameter("btnEditar") != null) {
                 int cod = Integer.parseInt(request.getParameter("txtId"));
                 int idUs = Integer.parseInt(request.getParameter("txtidUs"));

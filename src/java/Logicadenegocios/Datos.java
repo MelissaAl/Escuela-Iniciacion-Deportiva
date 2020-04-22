@@ -69,7 +69,7 @@ public class Datos {
         java.sql.Statement st;
         try {
             st = con.createStatement();
-            String strSql = "SELECT t0.idUsuarios, t0.Nombres, t0.Apellidos, t1.nombre, t0.NomUsuario, t0.Contraseña\n"
+            String strSql = "SELECT t0.idUsuarios, t0.Nombres, t0.Apellidos, t1.nombre, t0.NomUsuario, t0.Contraseña, t1.idPerfil\n"
                     + "       FROM usuario t0\n"
                     + "       INNER JOIN perfil t1 ON t0.Perfiles=t1.idPerfil\n"
                     + "       WHERE t0.idUsuarios='" + id + "'";
@@ -81,7 +81,7 @@ public class Datos {
         return rs;
     }
 
-     public static ResultSet consultarUsuarioPorNombre(Connection con, String nombres) {
+        public static ResultSet consultarUsuarioPorNombre(Connection con, String nombres) {
         ResultSet rs = null;
         java.sql.Statement st;
         try {
@@ -96,7 +96,7 @@ public class Datos {
         }
         return rs;
     }
-     
+        
     // Listar los usuarios de la BD.
     public static ResultSet mostrarUsuarios(Connection con) {
         ResultSet rs = null;
@@ -142,7 +142,7 @@ public class Datos {
         try {
             st = con.createStatement();
             String strSql = "UPDATE usuario " + "SET Nombres = '" + nombres + "', Apellidos = '" + apellidos + "', Perfiles = " + perfiles
-                    + ", nomUsuario = '" + usuario
+                    + ", NomUsuario = '" + usuario
                     + "', Contraseña = '" + pass
                     + "', Inactivo = " + activo
                     + " WHERE idUsuarios = " + id;
@@ -1008,23 +1008,8 @@ public class Datos {
         return rs;
     }
 
-    //Lista la tabla de prmisos de la BD.
-    public static ResultSet mostrarPermiso(Connection con) {
-        ResultSet rs = null;
-        java.sql.Statement st;
-        try {
-            st = con.createStatement();
-            String strSql = "SELECT * FROM permiso t0\n";
-                    
-            rs = st.executeQuery(strSql);
-        } catch (SQLException ex) {
-            System.out.println("Error mostrando...: " + ex);
-        }
-        return rs;
-    }
-    
-    // mostrar lista de Permisos
-    public static ResultSet mostrarPermisos(Connection con, int idPerm) {
+    //// mostrar lista de Permisos
+    public static ResultSet mostrarPermiso(Connection con, int idPerm) {
         ResultSet rs = null;
         java.sql.Statement st;
         try {
@@ -1058,13 +1043,13 @@ public class Datos {
     }
 
     // Insertar permisos en la BD.
-    public static int insertarPermisoUsuario(Connection con, int idUs, int idPerm, int act) {
+    public static int insertarPermisoUsuario(Connection con, int idUs, int idPerm) {
         int cantFilas = 0;
         java.sql.Statement st;
         try {
             st = con.createStatement();
-            String strSql = "INSERT INTO permisos_usuarios(idPermisos,idUsuario,activo)"
-                    + "VALUES (" + idUs + "," + idPerm + "," + act + ")";
+            String strSql = "INSERT INTO permisos_usuarios(idPermisos,idUsuario)"
+                    + "VALUES (" + idUs + "," + idPerm + ")";
 
             cantFilas = st.executeUpdate(strSql);
         } catch (SQLException ex) {
@@ -1102,6 +1087,4 @@ public class Datos {
         }
         return cantFilas;
     }
-
-
 }
