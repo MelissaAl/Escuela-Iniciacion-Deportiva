@@ -89,7 +89,6 @@ and open the template in the editor.
                 int perfil = Integer.parseInt(request.getParameter("selectPerf"));
                 String usuar = request.getParameter("txtUsua");
                 String pass = request.getParameter("txtPas");
-
                 try {
                     int var = 1;
                     ln.insertarUsuario(cod, nomb, apell, perfil, usuar, pass, var);
