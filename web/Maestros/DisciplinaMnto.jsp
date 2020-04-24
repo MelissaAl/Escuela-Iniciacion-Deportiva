@@ -43,7 +43,7 @@ and open the template in the editor.
                         <td><input type="text" placeholder="Digite Digite codigo" name="txtCodDisc"></td>
                     </tr>
                     <tr>
-                        <th colspan="2"><input type="submit" name="btnGrabrar"
+                        <th colspan="2"><input type="submit" name="btnGrabar"
                                                value="Grabar Disciplina"></td>                      
                     </tr>
                 </thead>

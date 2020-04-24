@@ -216,7 +216,7 @@ public class Logicadenegocios {
 
     // Insertar Categoria en la BD
     public int insertarAsistencia(String dia, String mes,
-            int año, int idAlumno, int idCurso) {
+            int año, String idAlumno, int idCurso) {
         int cantRegs = dat.insertarAsistencia(con, dia, mes, año, idAlumno,idCurso);
         System.out.println(cantRegs + " Insertados");
         return cantRegs;

@@ -420,7 +420,7 @@ public class Datos {
 
     // Insertar asistencia a la BD
     public static int insertarAsistencia(Connection con, String dia, String mes,
-            int año, int idAlumno, int idCurso) {
+            int año, String idAlumno, int idCurso) {
         int cantFilas = 0;
         java.sql.Statement st;
         try {
@@ -947,7 +947,7 @@ public class Datos {
         try {
             st = con.createStatement();
             String strSql = "INSERT INTO permiso(nombre,activo)"
-                    + "VALUES (" + nombre + "," + activo + ")";
+                    + "VALUES ('" + nombre + "'," + activo + ")";
 
             cantFilas = st.executeUpdate(strSql);
         } catch (SQLException ex) {

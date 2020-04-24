@@ -73,7 +73,7 @@ and open the template in the editor.
                             </td>
                     </tr>
                     <tr>
-                        <th colspan="2"><input type="submit" name="btnGrabrar"
+                        <th colspan="2"><input type="submit" name="btnGrabar"
                                                value="Grabar Alumno"></td>                      
                     </tr>
                 </thead>

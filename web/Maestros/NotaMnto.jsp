@@ -64,7 +64,7 @@ and open the template in the editor.
 
                         </tr>                  
                         <tr>
-                            <th colspan="2"><input type="submit" name="btnGrabrar"
+                            <th colspan="2"><input type="submit" name="btnGrabar"
                                                    value="Grabar Nota"></td>                      
                         </tr>
                     </thead>
@@ -78,7 +78,7 @@ and open the template in the editor.
 
                 String nota = request.getParameter("txtNota");
                 int Vnota = Integer.parseInt(request.getParameter("txtVnota"));
-                int idAlum = Integer.parseInt(request.getParameter("txtidAlum"));
+                int idAlum = Integer.parseInt(request.getParameter("selectUsus"));
 
                 try {               
                     ln.insertarNotas(nota, Vnota, idAlum);

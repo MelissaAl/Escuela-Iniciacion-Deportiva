@@ -37,7 +37,7 @@ and open the template in the editor.
             rs2 = ln.mostrarCursos();
         %>
         <div >
-            <form action="">
+            <form action="" method="GET">
                 <table border="1" width="250" align="center">
                     <thead>    
 
@@ -67,7 +67,7 @@ and open the template in the editor.
                         </tr>
                         <tr>
                             <td>Año :</td>
-                            <td><input type="text" placeholder="Digite año" name="txtAño"></td>
+                            <td><input type="text" placeholder="Digite año" name="txtAnio"></td>
                         </tr>
                         <tr>
                             <td>Alumno </td>
@@ -98,7 +98,7 @@ and open the template in the editor.
                             </td>
                         </tr>                   
                         <tr>
-                            <th colspan="2"><input type="submit" name="btnGrabrar"
+                            <th colspan="2"><input type="submit" name="btnGrabar"
                                                    value="Grabar Asistencia"></td>                      
                         </tr>
                     </thead>
@@ -111,12 +111,18 @@ and open the template in the editor.
             if (request.getParameter("btnGrabar") != null) {
                 String dia = request.getParameter("txtDia");
                 String mes = request.getParameter("selectMes");
-                int año = Integer.parseInt(request.getParameter("txtAño"));
-                int idAlum = Integer.parseInt(request.getParameter("txtidAlum"));
-                int idCurs = Integer.parseInt(request.getParameter("txtidCurso"));
+                //String an=request.getParameter("txtAño");
+                //int an1=Integer.parseInt(an);
+                int anio = Integer.parseInt(request.getParameter("txtAnio"));
+                String idA=request.getParameter("selectAlum");
+                // int idAlum=Integer.parseInt(idA);
+                //int idAlum = Integer.parseInt(request.getParameter("selectAlum"));
+                // String idC=request.getParameter("txtidCurso");
+                // int idCurs=Integer.parseInt(idC);
+                int idCurs = Integer.parseInt(request.getParameter("selectEsc"));
 
                 try {
-                    ln.insertarAsistencia(dia, mes, año, idAlum, idCurs);
+                   ln.insertarAsistencia(dia, mes, anio, idA, idCurs);
                     request.getRequestDispatcher("Asistencia.jsp").forward(request, response);
                 } catch (Exception e) {
                     out.println(e + "");

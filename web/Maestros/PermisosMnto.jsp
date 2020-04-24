@@ -31,7 +31,7 @@ and open the template in the editor.
         </nav>
 
         <div >
-            <form action="" method="post"  enctype="multipart/form-data">
+            <form action="" method="GET">
                 <table border="1" width="350" align="center">
                     <thead>           
                         <tr>
@@ -48,8 +48,8 @@ and open the template in the editor.
                             </td>
                         </tr>                  
                         <tr>
-                            <th colspan="2"><input type="submit" name="btnGrabrar"
-                                                   value="Grabar Alumno"></td>                      
+                            <th colspan="2"><input type="submit" name="btnGrabar"
+                                                   value="Grabar Permiso"></td>                      
                         </tr>
                     </thead>
                 </table>

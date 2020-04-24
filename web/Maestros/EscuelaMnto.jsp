@@ -39,7 +39,7 @@ and open the template in the editor.
             
         %>    
         <div >
-            <form action="">
+            <form action="" method="GET">
                 <table border="1" width="350" align="center">
                     <thead>                                            
                         <tr>
@@ -118,7 +118,7 @@ and open the template in the editor.
 
                         </tr>
                         <tr>
-                            <th colspan="2"><input type="submit" name="btnGrabrar"
+                            <th colspan="2"><input type="submit" name="btnGrabar"
                                                    value="Grabar Escuela"></td>                      
                         </tr>
                     </thead>
@@ -136,7 +136,7 @@ and open the template in the editor.
                 int codAlum = Integer.parseInt(request.getParameter("selectAlum"));
                 int codCat = Integer.parseInt(request.getParameter("selectCat"));
                 int idNota = Integer.parseInt(request.getParameter("selectNota"));
-                int idNotAlum = Integer.parseInt(request.getParameter("selectNotaUsus"));
+                int idNotAlum = Integer.parseInt("4");
                 try {
                     ln.insertarCurso(nomb, edadMin, edadMax, codEsc, codAlum, codCat, idNota, idNotAlum);
                     request.getRequestDispatcher("Escuelas.jsp").forward(request, response);

@@ -31,7 +31,7 @@ and open the template in the editor.
         </nav>
         
         <div >
-      <form action="">
+      <form action="" method="GET">
             <table border="1" width="250" align="center">
                 <thead>           
                     <tr>
@@ -52,7 +52,7 @@ and open the template in the editor.
                         </td>
                     </tr>                   
                     <tr>
-                        <th colspan="2"><input type="submit" name="btnGrabrar"
+                        <th colspan="2"><input type="submit" name="btnGrabar"
                                                value="Grabar Perfil"></td>                      
                     </tr>
                 </thead>
@@ -62,8 +62,7 @@ and open the template in the editor.
         </div>
 
          <%
-         
-            if (request.getParameter("btnGrabar") != null) {          
+             if (request.getParameter("btnGrabar") != null) {          
                 int cod =Integer.parseInt(request.getParameter("txtId"));
                 String nomb = request.getParameter("txtNom");
                 int activo = Integer.parseInt(request.getParameter("selectAct"));
@@ -75,7 +74,7 @@ and open the template in the editor.
                 } catch (Exception e) {
                     out.println(e + "");
                 }
-            }
+             }
         %>
         
         
